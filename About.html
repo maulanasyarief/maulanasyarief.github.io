@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="UTF-8" />
+          <meta
+               name="viewport"
+               content="width=device-width, initial-scale=1.0" />
+          <title>About</title>
+          <!-- Bootstrap CSS -->
+          <link
+               href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+               rel="stylesheet" />
+          <link href="./assets/css/MyStyle.css" rel="stylesheet" />
+     </head>
+     <body class="dark-mode">
+          <div class="container-fluid">
+               <div class="row vh-100">
+                    <!-- Sidebar -->
+                    <div
+                         id="sidebar"
+                         class="col-md-3 col-lg-2 p-3 nav-dark-mode">
+                         <div class="d-flex flex-column align-items-center">
+                              <img
+                                   src="https://via.placeholder.com/100"
+                                   class="rounded-circle mb-3"
+                                   alt="Profile Picture" />
+                              <h4 class="text-center">
+                                   Maulana Syarief Hidayat
+                              </h4>
+                              <p>Senior Developer</p>
+                         </div>
+                         <nav class="nav flex-column">
+                              <a class="nav-link text-white" href="index.html">
+                                   Home
+                              </a>
+                              <a class="nav-link text-white" href="About.html">
+                                   About
+                              </a>
+                              <a
+                                   class="nav-link text-white"
+                                   href="Portfolio.html">
+                                   Portfolio
+                              </a>
+                              <a
+                                   class="nav-link text-white"
+                                   href="Contact.html">
+                                   Contact
+                              </a>
+                         </nav>
+                         <button
+                              id="toggleTheme"
+                              class="btn btn-sm btn-secondary mt-4">
+                              <i
+                                   id="iconMoon"
+                                   class="bi bi-moon theme-icon"></i>
+                              <i
+                                   id="iconSun"
+                                   class="bi bi-sun theme-icon hidden"></i>
+                         </button>
+                    </div>
+                    <!-- Main Content -->
+                    <div class="col-md-9 col-lg-10 p-4">
+                         <h1>About US</h1>
+                         <p>
+                              Lorem ipsum dolor sit amet, consectetur adipiscing
+                              elit. Quisque at convallis justo. Mauris auctor
+                              lacus nec orci bibendum, a suscipit arcu
+                              elementum.
+                         </p>
+                         <!-- Additional Content Here -->
+                    </div>
+               </div>
+          </div>
+
+          <!-- Bootstrap JS -->
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+          <!-- Bootstrap Icons -->
+          <link
+               href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+               rel="stylesheet" />
+          <script>
+               const body = document.body;
+               const sidebar = document.getElementById("sidebar");
+               const toggleThemeButton = document.getElementById("toggleTheme");
+               const iconMoon = document.getElementById("iconMoon");
+               const iconSun = document.getElementById("iconSun");
+
+               toggleThemeButton.addEventListener("click", () => {
+                    const isDarkMode = body.classList.contains("dark-mode");
+
+                    // Toggle Body Theme
+                    body.classList.toggle("dark-mode");
+                    body.classList.toggle("light-mode");
+
+                    // Toggle Sidebar Theme
+                    sidebar.classList.toggle("nav-dark-mode");
+                    sidebar.classList.toggle("nav-light-mode");
+
+                    // Update Icons
+                    if (isDarkMode) {
+                         iconMoon.classList.add("hidden");
+                         iconSun.classList.remove("hidden");
+                    } else {
+                         iconMoon.classList.remove("hidden");
+                         iconSun.classList.add("hidden");
+                    }
+               });
+          </script>
+     </body>
+</html>
